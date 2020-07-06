@@ -24,7 +24,7 @@ router.get('/:userId', function(req, res, next) {
         var db = db.db('cardDetails');
         db.collection('cardDetails', function (err, collection) {
         
-          collection.find({'id':userId}).toArray(function(err, items) {
+          collection.find({'sort_code':searchJson.sort_code , 'account_number':searchJson.account_number}).toArray(function(err, items) {
              if(err) {
              res.status(200).json({"errorcode":"50002","errormessage":"Error in searching from DB"}); 
             }    
@@ -44,23 +44,23 @@ router.get('/:userId', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   var searchJson = req.body;
-  console.log('Id: '+searchJson.id);
+  console.log('Account_Number: '+searchJson.account_number);
   MongoClient.connect(dbUrl, function(err,db){
     if (err){
       res.status(200).json({"errorcode":"50003","errormessage":"Error connecting to DB"}); 
     }else
     {
         database = db;
-        console.log('MongoDB connection successful');
+        console.log('MongoDB connection successful')
         var db = db.db('cardDetails');
         db.collection('cardDetails', function (err, collection) {
         
-          collection.find({'id':searchJson.id} && {'brand':searchJson.brand}).toArray(function(err, items) {
+          collection.find({'sort_code':searchJson.sort_code , 'account_number':searchJson.account_number}).toArray(function(err, items) {
              if(err) {
               res.status(200).json({"errorcode":"50002","errormessage":"Error in searching from DB"});  
              }
-             if(items && items.length>0 ){   
-              res.status(200).json(items); 
+             if(items && items.length>0 ){  
+               res.status(200).json(items); 
              } else {
               res.status(200).json({"errorcode":"50001","errormessage":"Data not available in DB"});
              }         
