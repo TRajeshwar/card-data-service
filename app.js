@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
 
 
 var getCardDetailsRouter = require('./routes/getCardDetails');
@@ -16,9 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-mongoose.connect('mongodb://127.0.0.1:27017/mongo');
 app.use('/getcarddetails', getCardDetailsRouter);
 
 // catch 404 and forward to error handler
