@@ -12,10 +12,10 @@ variables:
   azureSubscription: '065332ae-1485-4324-8772-d496df9e70f6'
 
   # Function app name
-  functionAppName: ''
+  functionAppName: 'get-card-details-new'
  
   # Environment name
-  environmentName: ''
+  environmentName: 'PRODUCTION'
  
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
