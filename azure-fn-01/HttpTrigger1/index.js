@@ -1,6 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var dbUrl = 'mongodb://azurecosmostest1:L46XJChy9tpiAEAI8wJLhDgUXKnzXN8STiXgIKU2FsiEdKzqQK1DgFdMhxG2gVEIklxyFo4594UX08I2a7Jquw%3D%3D@azurecosmostest1.documents.azure.com:10255/?ssl=true&replicaSet=globaldb';
 // using funcpack now
+//
 
 module.exports = function (context, req) {
   MongoClient.connect(dbUrl, (err, db) => {
