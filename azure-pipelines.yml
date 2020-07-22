@@ -12,7 +12,7 @@ variables:
   azureSubscription: '065332ae-1485-4324-8772-d496df9e70f6'
 
   # Function app name
-  functionAppName: 'get-card-details-new'
+  functionAppName: 'getcarddetails-v1'
  
   # Environment name
   environmentName: 'PRODUCTION'
