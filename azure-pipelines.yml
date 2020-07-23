@@ -43,8 +43,8 @@ stages:
       displayName: 'Build extensions'
 
     - script: |
-        cd azure-fn-01
-        npm install
+
+        cd azure-fn-01 && npm install
         npm run build --if-present
         npm run test --if-present
       displayName: 'Prepare binaries'
