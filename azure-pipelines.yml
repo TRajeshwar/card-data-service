@@ -21,9 +21,16 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build
-  displayName: Build stage
-  jobs:  
+- stage: Initiate
+  jobs:
+  - task: FuncToolsInstaller@0
+    inputs:
+    version: 'latest'
+    displayName: Initiate
+
+- stage: Build 
+  dependsOn: Initiate
+  jobs:
   - job: Build
     displayName: Build
     pool:
@@ -60,7 +67,7 @@ stages:
 
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
-
+      
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
