@@ -44,7 +44,7 @@ stages:
 
     - script: |
 
-        cd azure-fn-01 && npm install
+        cd Az-function && npm install
         npm run build --if-present
         npm run test --if-present
       displayName: 'Prepare binaries'
