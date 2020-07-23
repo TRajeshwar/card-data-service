@@ -80,7 +80,7 @@ stages:
             inputs:
               azureSubscription: 'Pay-As-You-Go (d4c45501-af06-4f45-b92b-7d2b454f39fe)-1255'
               appType: 'functionApp'
-              appName: 'getCardDetails-v1'
+              appName: '$(functionAppName)'
               deployToSlotOrASE: true
               resourceGroupName: 'tcs-poc'
               slotName: 'production'
