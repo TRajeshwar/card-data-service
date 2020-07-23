@@ -13,7 +13,7 @@ variables:
 
 
   # Function app name
-  functionAppName: 'getcarddetails-v1'
+  functionAppName: 'getCardDetails-v2'
  
   # Environment name
   environmentName: 'PRODUCTION'
