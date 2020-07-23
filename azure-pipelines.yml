@@ -22,20 +22,7 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Initiate
-  jobs:
-  - job: Install
-    displayName: Install
-    steps:
-      - task: FuncToolsInstaller@0
-        inputs:
-          version: 'latest'
-        displayName: Initiate
-
-
 - stage: Build 
-  dependsOn: Initiate
-  condition: succeeded()
   jobs:
   - job: Build
     displayName: Build
@@ -58,7 +45,7 @@ stages:
     - script: |
 
         cd Az-function && npm install
-        npm run build --if-present
+        cd Az-function && npm run build --if-present
         npm run test --if-present
       displayName: 'Prepare binaries'
       
@@ -97,5 +84,5 @@ stages:
               deployToSlotOrASE: true
               resourceGroupName: 'tcs-poc'
               slotName: 'production'
-              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               deploymentMethod: 'auto'
