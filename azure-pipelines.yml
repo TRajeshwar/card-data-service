@@ -23,13 +23,18 @@ variables:
 stages:
 - stage: Initiate
   jobs:
-  - task: FuncToolsInstaller@0
-    inputs:
-    version: 'latest'
-    displayName: Initiate
+  - job: Install
+    displayName: Install
+    steps:
+      - task: FuncToolsInstaller@0
+        inputs:
+          version: 'latest'
+        displayName: Initiate
+
 
 - stage: Build 
   dependsOn: Initiate
+  condition: succeeded()
   jobs:
   - job: Build
     displayName: Build
