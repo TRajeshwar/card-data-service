@@ -11,6 +11,7 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '065332ae-1485-4324-8772-d496df9e70f6'
 
+
   # Function app name
   functionAppName: 'getcarddetails-v1'
  
@@ -90,7 +91,11 @@ stages:
           - task: AzureFunctionApp@1
             displayName: 'Azure Functions App Deploy: '
             inputs:
-              azureSubscription: '$(azureSubscription)'
-              appType: functionAppLinux
-              appName: $(functionAppName)
-              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              azureSubscription: 'Pay-As-You-Go (d4c45501-af06-4f45-b92b-7d2b454f39fe)-1255'
+              appType: 'functionApp'
+              appName: 'getCardDetails-v1'
+              deployToSlotOrASE: true
+              resourceGroupName: 'tcs-poc'
+              slotName: 'production'
+              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              deploymentMethod: 'auto'
