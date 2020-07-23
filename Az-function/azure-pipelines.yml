@@ -83,4 +83,4 @@ stages:
               resourceGroupName: 'tcs-poc'
               slotName: 'production'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-              deploymentMethod: 'auto'
+              deploymentMethod: 'runFromPackage'
