@@ -1,5 +1,5 @@
 {
-  "name": "azure-functions",
+  "name": "azure-fun-getcarddetails",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
     "mongodb": "^2.2.33",
     "mongoose": "^5.9.19",
     "morgan": "~1.9.1"
