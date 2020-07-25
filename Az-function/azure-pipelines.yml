@@ -16,7 +16,7 @@ variables:
   functionAppName: 'getCardDetails-v2'
  
   # Environment name
-  environmentName: 'PRODUCTION'
+  environmentName: 'Staging'
  
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -83,6 +83,6 @@ stages:
               appName: '$(functionAppName)'
               deployToSlotOrASE: true
               resourceGroupName: 'tcs-poc'
-              slotName: 'production'
+              slotName: 'Staging'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               deploymentMethod: 'runFromPackage'
