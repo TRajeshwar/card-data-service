@@ -84,5 +84,5 @@ stages:
               deployToSlotOrASE: true
               resourceGroupName: 'tcs-poc'
               slotName: 'Staging'
-              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              package: '$(Pipeline.Workspace)/getCardDetails/getCardDetails-$(Build.BuildId).zip'
               deploymentMethod: 'runFromPackage'
