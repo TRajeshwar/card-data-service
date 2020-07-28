@@ -55,7 +55,7 @@ stages:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Az-function'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/getCardDetails-$(Build.BuildId).zip
         replaceExistingArchive: true
 
     - upload: $(Build.ArtifactStagingDirectory)/getCardDetails-$(Build.BuildId).zip
