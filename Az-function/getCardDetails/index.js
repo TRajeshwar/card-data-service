@@ -9,6 +9,7 @@ module.exports = function (context, req) {
       errorMessage = { "errorcode": "50003", "errormessage": "Error connecting to DB" };
       send(500, JSON.parse(JSON.stringify(errorMessage)),db);
     }
+    
     database = db;
     console.log('MongoDB connection successful')
     var db = db.db('cardDetails');
